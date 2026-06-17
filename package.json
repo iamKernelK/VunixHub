@@ -1,0 +1,12 @@
+{
+  "name": "vunix-ui",
+  "version": "1.0.0",
+  "description": "Vunix Professional UI Framework",
+  "main": "src/Main.lua",
+  "scripts": {
+    "build": "rojo build default.project.json --output dist/main.lua"
+  },
+  "author": "SkyWasHere",
+  "license": "MIT"
+}
+
