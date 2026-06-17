@@ -1,37 +1,6 @@
-name: Build VunixUI
-
-on:
-  push:
-    branches: ["main"]
-
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v4
-
-      - name: Install Aftman & DarkLua
-        uses: ok-nick/setup-aftman@v0.4.0
-
       - name: Process and Bundle Script
         run: |
           mkdir -p dist
-          darklua process src/Main.lua dist/main.lua
-
-      - name: Commit Built File
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/main.lua
-          git commit -m "🚀 Auto-build VunixUI from src" || echo "No changes to commit"
-          git push
-      - name: Commit dist/main.lua back to repo
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add dist/main.lua
-          git commit -m "[AUTO] Upload built main.lua" || exit 0
+          # هذا السطر يخبر السيرفر أين يجد إعدادات DarkLua
+          darklua process --config Build/.darklua.json src/Main.lua dist/main.lua
           git push
