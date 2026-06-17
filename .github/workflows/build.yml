@@ -1,6 +1,0 @@
-      - name: Process and Bundle Script
-        run: |
-          mkdir -p dist
-          # هذا السطر يخبر السيرفر أين يجد إعدادات DarkLua
-          darklua process --config Build/.darklua.json src/Main.lua dist/main.lua
-          git push
