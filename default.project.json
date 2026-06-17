@@ -1,0 +1,13 @@
+{
+  "name": "VunixUI",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "Vunix": {
+        "$path": "src",
+        "$className": "ModuleScript"
+      }
+    }
+  }
+}
+
